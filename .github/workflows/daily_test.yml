@@ -1,0 +1,23 @@
+name: Daily Investment Secretary Test
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 22 * * *"
+      timezone: "Asia/Seoul"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 저장소 가져오기
+        uses: actions/checkout@v6
+
+      - name: Python 설치
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: 투자비서 테스트 실행
+        run: python investment_secretary.py
