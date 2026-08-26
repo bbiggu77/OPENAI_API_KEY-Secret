@@ -19,5 +19,8 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: 필요한 라이브러리 설치
+        run: pip install -r requirements.txt
+
       - name: 투자비서 테스트 실행
         run: python investment_secretary.py
