@@ -23,4 +23,6 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 투자비서 테스트 실행
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: python investment_secretary.py
